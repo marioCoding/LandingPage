@@ -1,0 +1,159 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  position: relative;
+  height: 100px;
+  flex-direction: row-reverse;
+}
+.title {
+  font-family: 'Courgette', cursive;
+  font-size: 30px;
+  color: rgb(158, 147, 132);
+  margin: auto;
+  animation: 1s ease-out 0s 1 title-animation;
+}
+nav {
+  display: flex;
+  justify-self: center;
+  align-items: center;
+}
+ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+li {
+  list-style: none;
+  margin: 10px;
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+/* Article 1 */
+#article1 {
+  padding: 30px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: relative;
+  background-color: rgb(68, 68, 121);
+  color: #fff;
+}
+.art1-title {
+  font-size: 40px;
+}
+.art1-text {
+  font-weight: bolder;
+}
+
+/* Article 2 */
+#article2 {
+  padding: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: antiquewhite;
+}
+.project1, .project2, .project3, .project4 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 15px;
+}
+h4 {
+  color: rgb(113, 113, 113);
+  text-indent: 10px;
+}
+.project1-title:hover, .project2-title:hover,
+.project3-title:hover, .project4-title:hover {
+  cursor: pointer;
+  animation: subtitles-animation 2s ease 0s; 
+} 
+
+/* Article 3 */
+#article3 {
+  padding: 30px;
+}
+.lab1, .lab2, .lab3, .lab4,
+.lab5, .lab6, .lab7, .lab8 {
+  margin-top: 12.5px;
+  margin-bottom: 20px;
+}
+.lab1-title:hover, .lab2-title:hover, .lab3-title:hover, .lab4-title:hover,
+.lab5-title:hover, .lab6-title:hover, .lab7-title:hover, .lab8-title:hover {
+  cursor: pointer;
+  animation: subtitles-animation 2s ease 0s;
+}
+
+/* Footer */
+footer {
+  padding: 75px 30px 75px 30px;
+  text-align: center;
+  background-color: #daccb9;
+}
+
+/* Animations */ 
+@keyframes subtitles-animation {
+  0% {
+    opacity: .35;
+  }
+  50% {
+    opacity: .7;
+  }
+  100% {
+    opacity: 1;
+    transform: skewX(-25deg);
+  }
+}
+
+@keyframes title-animation {
+  0% {
+    transform: translateX(-100%);
+    color:rgb(68, 68, 121);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@media screen and (min-width: 720px) {
+  main {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+  }
+  #article1 {
+    grid-column: 1/3;
+    background-color: rgb(68, 68, 121);
+    color: #fff;
+  }
+  #article2 {
+    display: inline-block;
+    grid-column: 2/3;
+    grid-row: 2/3;
+  }
+  #article3 {
+    /* Create a grid inside #article3 */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(2em, 10rem));
+    grid-gap: 10px;
+    grid-row: 2/3;
+    justify-content: center;
+  }
+  .wrapper-lab1, .wrapper-lab2, .wrapper-lab3, .wrapper-lab4,
+  .wrapper-lab5, .wrapper-lab6, .wrapper-lab7, .wrapper-lab8 {
+    background-color: bisque;
+    padding: 0 20px 0 20px;
+  }
+}
